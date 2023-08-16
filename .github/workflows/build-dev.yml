@@ -18,21 +18,7 @@ jobs:
 
       - name: Build Project
         run: mvn clean install -DskipTests
-
-      - name: Checkout api-automationtest Repository
-        uses: actions/checkout@v2
-        with:
-          repository: patidarmanish91/test_allure_cicd # Replace with the URL of your api-automationtest repository
-          ref: main
-
-      - name: Set up JDK for api-automationtest
-        uses: actions/setup-java@v1
-        with:
-          java-version: 17
-
-      - name: Run Test Cases
-        run: mvn test
-
+        
       - name: Trigger API AutomationTest Workflow
         run: |
                 # Trigger the workflow in api-automationtest repository
