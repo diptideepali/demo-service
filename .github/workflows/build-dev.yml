@@ -22,7 +22,7 @@ jobs:
       - name: Checkout api-automationtest Repository
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/patidarmanish91/test_allure_cicd.git # Replace with the URL of your api-automationtest repository
+          repository: patidarmanish91/test_allure_cicd # Replace with the URL of your api-automationtest repository
           ref: main
 
       - name: Set up JDK for api-automationtest
