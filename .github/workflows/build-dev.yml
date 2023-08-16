@@ -1,0 +1,45 @@
+name: Integration Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+
+      - name: Build Project
+        run: mvn clean install
+
+      - name: Checkout api-automationtest Repository
+        uses: actions/checkout@v2
+        with:
+          repository: https://github.com/patidarmanish91/test_allure_cicd.git # Replace with the URL of your api-automationtest repository
+          ref: main
+
+      - name: Set up JDK for api-automationtest
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+
+      - name: Run Test Cases
+        run: mvn test
+
+      - name: Trigger API AutomationTest Workflow
+        run: |
+                # Trigger the workflow in api-automationtest repository
+                curl -X POST -H "Authorization: Bearer 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" \
+                     -H "Accept: application/vnd.github.v3+json" \
+                     https://api.github.com/repos/patidarmanish91/test_allure_cicd/actions/workflows/65943127/dispatches \
+                     -d '{"ref":"main"}'
