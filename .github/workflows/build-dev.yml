@@ -26,7 +26,7 @@ jobs:
           ref: main
 
       - name: Set up JDK for api-automationtest
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v1
         with:
           java-version: 17
 
