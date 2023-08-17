@@ -13,6 +13,6 @@ public class HomeController {
 	@GetMapping
 	public String home() {
 	    System.out.println("Inside home call");
-		return "Ok";
+		return "OK";
 	}
 }
