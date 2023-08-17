@@ -17,7 +17,7 @@ jobs:
         with:
           java-version: 17
 
-      - name: Build Project
+      - name: Build Project 
         run: mvn clean install -DskipTests
         
       - name: Trigger API AutomationTest Workflow
