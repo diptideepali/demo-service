@@ -28,6 +28,6 @@ jobs:
                      https://api.github.com/repos/patidarmanish91/test_allure_cicd/actions/workflows/65943127/dispatches \
                      -d '{"ref":"main",
                           "inputs": {
-                                      "test-class-name": "com.manish.api.automation.TestSuiteExecution"
+                                      "test-class-name": "com.manish.api.automation.MathSuiteExecutionTest"
                                     }
                           }'
