@@ -14,7 +14,7 @@ public class CalculatorController {
 	
 	@GetMapping("/add")
 	public double add(@RequestParam double operand1, @RequestParam double operand2) {
-	    System.out.println("Inside Addition 11");
+	    System.out.println("Inside Addition 11 7");
 		return operand1 + operand2;
 	}
 
