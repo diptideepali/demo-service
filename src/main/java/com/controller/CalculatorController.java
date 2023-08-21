@@ -20,7 +20,7 @@ public class CalculatorController {
 
 	@GetMapping("/subtract")
 	public double subtract(@RequestParam double operand1, @RequestParam double operand2) {
-		System.out.println("Inside Subtraction");
+		System.out.println("Inside    787878 Subtraction");
 		return operand1 - operand2;
 	}
 
