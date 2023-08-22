@@ -25,7 +25,7 @@ jobs:
                 # Trigger the workflow in api-automationtest repository
                 curl -X POST -H "Authorization: Bearer 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>" \
                      -H "Accept: application/vnd.github.v3+json" \
-                     https://github.com/diptideepali/test_allure_cicd/actions/workflows/5929528955/dispatches \
+                     https://github.com/diptideepali/test_allure_cicd/actions/workflows/66883003/dispatches \
                      -d '{"ref":"main",
                           "inputs": {
                                       "test-class-name": "com.manish.api.automation.MathSuiteExecutionTest"
