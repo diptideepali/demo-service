@@ -26,7 +26,7 @@ public class CalculatorController {
 
 	@GetMapping("/multiply")
 	public double multiply(@RequestParam double operand1, @RequestParam double operand2) {
-		System.out.println("Inside Multiplication");
+		System.out.println("Inside      vvvvvv    Multiplication");
 		return operand1 * operand2;
 	}
 
