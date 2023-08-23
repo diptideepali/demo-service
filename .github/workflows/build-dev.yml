@@ -20,15 +20,15 @@ jobs:
       - name: Build Project 
         run: mvn clean install -DskipTests
         
-      - name: Set Project Name
+      - name: Trigger API AutomationTest Workflow
         id: set-project-name
         run: |
-          # Extract the project name dynamically (e.g., from a file)
-          project_name="NAXGroup"
-          echo "::set-output name=project_name::$project_name"
-      
-      - name: Upload Project Name as Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: project-name
-          path: ./project-name.txt
+            # Trigger the workflow in api-automationtest repository
+              curl -X POST -H "Authorization: Bearer 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>" \
+                -H "Accept: application/vnd.github.v3+json" \
+                https://github.com/diptideepali/test_allure_cicd/actions/workflows/66883003/dispatches \
+              -d '{"ref":"main",
+                          "inputs": {
+                                      "test-class-name": "com.manish.api.automation.MathSuiteExecutionTest"
+                                    }
+                  }'
